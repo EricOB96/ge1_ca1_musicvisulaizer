@@ -1,7 +1,22 @@
-[gd_scene format=3 uid="uid://cgtwl5po7au5x"]
+[gd_scene load_steps=4 format=3 uid="uid://cgtwl5po7au5x"]
 
-[node name="Node3D" type="Node3D"]
+[ext_resource type="Script" path="res://Scripts/XR_setup.gd" id="1_idn1m"]
+[ext_resource type="PackedScene" uid="uid://bx1xdisoqo1f6" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_tac_glove_low.tscn" id="2_spxil"]
+[ext_resource type="PackedScene" uid="uid://chumpejwiub7f" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_tac_glove_low.tscn" id="3_4tkf0"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_idn1m")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="LeftContoller" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="LeftHand" parent="XROrigin3D/LeftContoller" instance=ExtResource("2_spxil")]
+
+[node name="RightController" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="RightHand" parent="XROrigin3D/RightController" instance=ExtResource("3_4tkf0")]
