@@ -1,8 +1,39 @@
-[gd_scene load_steps=2 format=3 uid="uid://bcwvgjnipihtw"]
+[gd_scene load_steps=8 format=3 uid="uid://bcwvgjnipihtw"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_hblnb"]
+[ext_resource type="PackedScene" uid="uid://cgtwl5po7au5x" path="res://Scenes/Player.tscn" id="1_4vml8"]
+[ext_resource type="PackedScene" uid="uid://ccpthixs3yfcp" path="res://Scenes/Shapes.tscn" id="2_u6kae"]
+[ext_resource type="AudioStream" uid="uid://b4x3n2rl3wi7c" path="res://Assets/Sounds/lofi-beat-chill.mp3" id="2_wljj6"]
+[ext_resource type="Script" path="res://Scripts/shapesContoller.gd" id="3_8uovt"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g2r6i"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_uvt7b"]
+sky_material = SubResource("ProceduralSkyMaterial_g2r6i")
+
+[sub_resource type="Environment" id="Environment_wwifh"]
+background_mode = 2
+sky = SubResource("Sky_uvt7b")
+tonemap_mode = 2
 
 [node name="Main" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013355, 0)
 
-[node name="Floor" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_hblnb")
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wwifh")
+
+[node name="Player" parent="." instance=ExtResource("1_4vml8")]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_wljj6")
+autoplay = true
+max_distance = 82.35
+
+[node name="Shapes" parent="." instance=ExtResource("2_u6kae")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21823, 1.09063, 0)
+script = ExtResource("3_8uovt")

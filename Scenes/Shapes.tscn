@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccpthixs3yfcp"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_uc2dg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4aop7"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_qk55s"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_bjnqn"]
+
+[node name="Shapes" type="Node3D"]
+
+[node name="Sphere" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17259, -1.58476)
+mesh = SubResource("SphereMesh_uc2dg")
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.73897, 1.95214, 0)
+mesh = SubResource("BoxMesh_4aop7")
+
+[node name="Prism" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14184, 0, 0)
+mesh = SubResource("PrismMesh_qk55s")
+
+[node name="Cylinder" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.275285, -0.961363, 0, 0.961363, -0.275285, 0, 0, 0, 1, 0, 1.93693, 2.66409)
+mesh = SubResource("CylinderMesh_bjnqn")
