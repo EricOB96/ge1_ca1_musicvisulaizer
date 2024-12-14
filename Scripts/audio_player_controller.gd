@@ -10,12 +10,16 @@ var playlist = [
 var current_track = 0  # Index of current playing track
 @onready var audio_player = get_node("../AudioStreamPlayer3D")
 
-# Called when the scene loads
+# Pitch control variables
+var base_pitch = 1.0
+var pitch_step = 0.1
+var min_pitch = 0.5
+var max_pitch = 2.0
+
 func _ready():
 	# Load the first track
 	load_track(current_track)
 
-# Function to load and play a track
 func load_track(track_index):
 	var stream = load(playlist[track_index])
 	audio_player.stream = stream
@@ -36,6 +40,17 @@ func previous_track():
 	current_track = (current_track - 1) if current_track > 0 else playlist.size() - 1
 	load_track(current_track)
 
+# New pitch control functions
+func pitch_up():
+	var new_pitch = min(audio_player.pitch_scale + pitch_step, max_pitch)
+	audio_player.pitch_scale = new_pitch
+	print("Pitch up: ", new_pitch)
+
+func pitch_down():
+	var new_pitch = max(audio_player.pitch_scale - pitch_step, min_pitch)
+	audio_player.pitch_scale = new_pitch
+	print("Pitch down: ", new_pitch)
+
 # Function to handle sphere interactions
 func _on_sphere_play_pause_area_entered(area):
 	if area.is_in_group("controller"):
@@ -48,3 +63,12 @@ func _on_sphere_next_area_entered(area):
 func _on_sphere_previous_area_entered(area):
 	if area.is_in_group("controller"):
 		previous_track()
+
+# New functions for pitch control spheres
+func _on_sphere_pitch_up_area_entered(area):
+	if area.is_in_group("controller"):
+		pitch_up()
+
+func _on_sphere_pitch_down_area_entered(area):
+	if area.is_in_group("controller"):
+		pitch_down()

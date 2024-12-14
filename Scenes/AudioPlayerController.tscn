@@ -58,6 +58,41 @@ text = "PREV
 "
 font_size = 16
 
+[node name="PitchUp" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464507, 0.725247, 0)
+mesh = SubResource("SphereMesh_388pf")
+
+[node name="Area3D" type="Area3D" parent="PitchUp"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PitchUp/Area3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_5ehr1")
+
+[node name="Label3D" type="Label3D" parent="PitchUp"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.23328)
+text = "PITCH +
+"
+font_size = 16
+
+[node name="PitchDown" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400822, 0.692929, -0.197837)
+mesh = SubResource("SphereMesh_388pf")
+
+[node name="Area3D" type="Area3D" parent="PitchDown"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PitchDown/Area3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_5ehr1")
+
+[node name="Label3D" type="Label3D" parent="PitchDown"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00326404, 0.23328)
+text = "PITCH -
+
+"
+font_size = 16
+
 [connection signal="area_entered" from="Play/Area3D" to="." method="_on_sphere_play_pause_area_entered"]
 [connection signal="area_entered" from="Next/Area3D" to="." method="_on_sphere_next_area_entered"]
 [connection signal="area_entered" from="Prev/Area3D" to="." method="_on_sphere_previous_area_entered"]
+[connection signal="area_entered" from="PitchUp/Area3D" to="." method="_on_sphere_pitch_up_area_entered"]
+[connection signal="area_entered" from="PitchDown/Area3D" to="." method="_on_sphere_pitch_down_area_entered"]

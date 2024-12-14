@@ -1,22 +1,15 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=4 format=3 uid="uid://cgtwl5po7au5x"]
-=======
 [gd_scene load_steps=7 format=3 uid="uid://cgtwl5po7au5x"]
->>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://Scripts/XR_setup.gd" id="1_idn1m"]
 [ext_resource type="PackedScene" uid="uid://bx1xdisoqo1f6" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_tac_glove_low.tscn" id="2_spxil"]
 [ext_resource type="PackedScene" uid="uid://chumpejwiub7f" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_tac_glove_low.tscn" id="3_4tkf0"]
 
-<<<<<<< Updated upstream
-=======
 [sub_resource type="SphereShape3D" id="SphereShape3D_63kpo"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_x1hss"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hhoy7"]
 
->>>>>>> Stashed changes
 [node name="Player" type="Node3D"]
 script = ExtResource("1_idn1m")
 
@@ -45,8 +38,6 @@ tracker = &"right_hand"
 show_when_tracked = true
 
 [node name="RightHand" parent="XROrigin3D/RightController" instance=ExtResource("3_4tkf0")]
-<<<<<<< Updated upstream
-=======
 
 [node name="Area3D" type="Area3D" parent="XROrigin3D/RightController/RightHand" groups=["controller"]]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
@@ -64,4 +55,3 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.505352, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/floor/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.645388, 0)
 shape = SubResource("BoxShape3D_hhoy7")
->>>>>>> Stashed changes

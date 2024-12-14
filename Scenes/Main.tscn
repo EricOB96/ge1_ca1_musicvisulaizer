@@ -1,13 +1,8 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=2 format=3 uid="uid://bcwvgjnipihtw"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_hblnb"]
-=======
-[gd_scene load_steps=9 format=3 uid="uid://bcwvgjnipihtw"]
+[gd_scene load_steps=9 format=3 uid="uid://cgf8bnuxfoc8v"]
 
 [ext_resource type="PackedScene" uid="uid://cgtwl5po7au5x" path="res://Scenes/Player.tscn" id="1_4vml8"]
 [ext_resource type="PackedScene" uid="uid://ccpthixs3yfcp" path="res://Scenes/Shapes.tscn" id="2_u6kae"]
-[ext_resource type="AudioStream" uid="uid://b4x3n2rl3wi7c" path="res://Assets/Sounds/lofi-beat-chill.mp3" id="2_wljj6"]
+[ext_resource type="AudioStream" uid="uid://nr71jsicpdro" path="res://Assets/Sounds/lofi-beat-chill.mp3" id="2_wljj6"]
 [ext_resource type="Script" path="res://Scripts/shapesContoller.gd" id="3_8uovt"]
 [ext_resource type="PackedScene" uid="uid://jynpfcdqnmjw" path="res://Assets/Models/Stars.glb" id="5_uj1am"]
 [ext_resource type="PackedScene" uid="uid://b5rq7nvr8ju22" path="res://Assets/Models/Planet_stars.glb" id="6_28wnh"]
@@ -16,14 +11,10 @@
 [sub_resource type="Environment" id="Environment_j505v"]
 background_mode = 1
 ambient_light_energy = 8.92
->>>>>>> Stashed changes
 
 [node name="Main" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.013355, 0)
 
-<<<<<<< Updated upstream
-[node name="Floor" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_hblnb")
-=======
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.25, 0.144399, 0.262095, 0.954178, -0.478698, 0.86244, -0.164453, 0.353377, 11.78, 0)
 light_energy = 3.101
@@ -54,4 +45,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7823, 14.1848, 0)
 
 [node name="AudioPlayerController" parent="." instance=ExtResource("7_m7d5p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74066, -0.814824)
->>>>>>> Stashed changes

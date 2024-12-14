@@ -38,10 +38,7 @@ textures/vram_compression/import_etc2_astc=true
 
 openxr/enabled=true
 openxr/environment_blend_mode=2
-<<<<<<< Updated upstream
-=======
 openxr/foveation_level=0
 openxr/startup_alert=false
 openxr/extensions/hand_interaction_profile=true
->>>>>>> Stashed changes
 shaders/enabled=true
