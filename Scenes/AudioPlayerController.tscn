@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3pn4dhasebah"]
+
+[ext_resource type="Script" path="res://Scripts/audio_player_controller.gd" id="1_t7kvn"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_388pf"]
+radius = 0.2
+height = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5ehr1"]
+
+[node name="AudioPlayerController" type="Node3D"]
+script = ExtResource("1_t7kvn")
+
+[node name="Play" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0112489, 0, 0)
+mesh = SubResource("SphereMesh_388pf")
+
+[node name="Area3D" type="Area3D" parent="Play"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Play/Area3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_5ehr1")
+
+[node name="Label3D" type="Label3D" parent="Play"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.23328)
+text = "PLAY/PAUSE"
+font_size = 16
+
+[node name="Next" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.913897, 0, 0)
+mesh = SubResource("SphereMesh_388pf")
+
+[node name="Area3D" type="Area3D" parent="Next"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Next/Area3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_5ehr1")
+
+[node name="Label3D" type="Label3D" parent="Next"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.23328)
+text = "NEXT
+"
+font_size = 16
+
+[node name="Prev" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.865492, 0, 0)
+mesh = SubResource("SphereMesh_388pf")
+
+[node name="Area3D" type="Area3D" parent="Prev"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Prev/Area3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("SphereShape3D_5ehr1")
+
+[node name="Label3D" type="Label3D" parent="Prev"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.23328)
+text = "PREV
+"
+font_size = 16
+
+[connection signal="area_entered" from="Play/Area3D" to="." method="_on_sphere_play_pause_area_entered"]
+[connection signal="area_entered" from="Next/Area3D" to="." method="_on_sphere_next_area_entered"]
+[connection signal="area_entered" from="Prev/Area3D" to="." method="_on_sphere_previous_area_entered"]
