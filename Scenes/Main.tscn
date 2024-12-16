@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://cgf8bnuxfoc8v"]
 
 [ext_resource type="PackedScene" uid="uid://cgtwl5po7au5x" path="res://Scenes/Player.tscn" id="1_4vml8"]
-[ext_resource type="PackedScene" uid="uid://ccpthixs3yfcp" path="res://Scenes/Shapes.tscn" id="2_u6kae"]
+[ext_resource type="PackedScene" uid="uid://bylp5ab84hihd" path="res://Scenes/Shapes.tscn" id="2_u6kae"]
 [ext_resource type="AudioStream" uid="uid://nr71jsicpdro" path="res://Assets/Sounds/lofi-beat-chill.mp3" id="2_wljj6"]
 [ext_resource type="Script" path="res://Scripts/shapesContoller.gd" id="3_8uovt"]
 [ext_resource type="PackedScene" uid="uid://jynpfcdqnmjw" path="res://Assets/Models/Stars.glb" id="5_uj1am"]
 [ext_resource type="PackedScene" uid="uid://b5rq7nvr8ju22" path="res://Assets/Models/Planet_stars.glb" id="6_28wnh"]
-[ext_resource type="PackedScene" uid="uid://c3pn4dhasebah" path="res://Scenes/AudioPlayerController.tscn" id="7_m7d5p"]
+[ext_resource type="PackedScene" path="res://Scenes/AudioPlayerController.tscn" id="7_m7d5p"]
 
 [sub_resource type="Environment" id="Environment_j505v"]
 background_mode = 1

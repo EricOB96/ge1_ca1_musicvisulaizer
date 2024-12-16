@@ -120,6 +120,7 @@ func _process(delta):
 	process_shape("Cube", "bass", 2.0, spectrum, delta)
 	process_shape("Prism", "low_mid", 1.5, spectrum, delta)
 	process_shape("Sphere", "high_mid", 1.0, spectrum, delta)
+	process_shape("Cylinder", "treble", 1.2, spectrum, delta)
 
 # Helper function to get audio energy values for each shape
 func get_shape_energy(shape_name: String) -> float:

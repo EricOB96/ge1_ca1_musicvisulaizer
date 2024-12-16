@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3pn4dhasebah"]
+[gd_scene load_steps=5 format=3 uid="uid://bqbafk6d3ch6w"]
 
 [ext_resource type="Script" path="res://Scripts/audio_player_controller.gd" id="1_t7kvn"]
 [ext_resource type="Material" uid="uid://cuc1qtshrqnlt" path="res://Assets/Materials/Audiobuttons.tres" id="2_k6uqa"]
