@@ -44,4 +44,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.7823, 14.1848, 0)
 [node name="OmniLight3D" type="OmniLight3D" parent="Planet_stars"]
 
 [node name="AudioPlayerController" parent="." instance=ExtResource("7_m7d5p")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.74066, -0.814824)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 1.74066, 0.185176)

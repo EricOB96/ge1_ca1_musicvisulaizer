@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgtwl5po7au5x"]
+[gd_scene load_steps=8 format=3 uid="uid://cgtwl5po7au5x"]
 
 [ext_resource type="Script" path="res://Scripts/XR_setup.gd" id="1_idn1m"]
 [ext_resource type="PackedScene" uid="uid://bx1xdisoqo1f6" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_tac_glove_low.tscn" id="2_spxil"]
 [ext_resource type="PackedScene" uid="uid://chumpejwiub7f" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_tac_glove_low.tscn" id="3_4tkf0"]
+[ext_resource type="Material" uid="uid://wbgfykal21m6" path="res://Assets/Materials/Floor.tres" id="4_khdmr"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_63kpo"]
 
@@ -48,6 +49,7 @@ shape = SubResource("SphereShape3D_63kpo")
 [node name="floor" type="MeshInstance3D" parent="XROrigin3D"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 mesh = SubResource("PlaneMesh_x1hss")
+surface_material_override/0 = ExtResource("4_khdmr")
 
 [node name="Area3D" type="Area3D" parent="XROrigin3D/floor"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.505352, 0)

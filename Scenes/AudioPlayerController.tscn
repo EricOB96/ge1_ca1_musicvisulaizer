@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3pn4dhasebah"]
+[gd_scene load_steps=5 format=3 uid="uid://c3pn4dhasebah"]
 
 [ext_resource type="Script" path="res://Scripts/audio_player_controller.gd" id="1_t7kvn"]
+[ext_resource type="Material" uid="uid://cuc1qtshrqnlt" path="res://Assets/Materials/Audiobuttons.tres" id="2_k6uqa"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_388pf"]
+material = ExtResource("2_k6uqa")
 radius = 0.2
 height = 0.5
 
@@ -29,6 +31,7 @@ font_size = 16
 [node name="Next" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.913897, 0, 0)
 mesh = SubResource("SphereMesh_388pf")
+surface_material_override/0 = ExtResource("2_k6uqa")
 
 [node name="Area3D" type="Area3D" parent="Next"]
 
@@ -45,6 +48,7 @@ font_size = 16
 [node name="Prev" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.865492, 0, 0)
 mesh = SubResource("SphereMesh_388pf")
+surface_material_override/0 = ExtResource("2_k6uqa")
 
 [node name="Area3D" type="Area3D" parent="Prev"]
 
@@ -61,6 +65,7 @@ font_size = 16
 [node name="PitchUp" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464507, 0.725247, 0)
 mesh = SubResource("SphereMesh_388pf")
+surface_material_override/0 = ExtResource("2_k6uqa")
 
 [node name="Area3D" type="Area3D" parent="PitchUp"]
 
@@ -77,6 +82,7 @@ font_size = 16
 [node name="PitchDown" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.400822, 0.692929, -0.197837)
 mesh = SubResource("SphereMesh_388pf")
+surface_material_override/0 = ExtResource("2_k6uqa")
 
 [node name="Area3D" type="Area3D" parent="PitchDown"]
 
